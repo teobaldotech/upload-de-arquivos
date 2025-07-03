@@ -1,0 +1,19 @@
+
+body{
+
+background-color: aquamarine;
+background-position: center;
+background-repeat: no-repeat;
+}
+.main{
+position: absolute;
+margin-top: auto;
+line-height: normal;
+width: 300px;
+border:300px solid #69e1ff;
+padding: auto;
+background-color: blueviolet;
+color: blanchedalmond;
+border-radius: 20%;
+padding-top: 6%;
+}
