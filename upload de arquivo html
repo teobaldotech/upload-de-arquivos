@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR"> 
+
+<head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Selecionar e Baixar Arquivo Local</title> 
+
+  <style> 
+
+    body { 
+
+      font-family: Arial, sans-serif; 
+
+      background-color: #f2f2f2; 
+
+      padding: 30px; 
+
+      text-align: center; 
+
+    } 
+
+    input[type="file"] { 
+
+      margin-top: 20px; 
+
+    } 
+
+    .download-btn { 
+
+      margin-top: 20px; 
+
+      padding: 10px 20px; 
+
+      background-color: #28a745; 
+
+      color: white; 
+
+      border: none; 
+
+      border-radius: 5px; 
+
+      cursor: pointer; 
+
+    } 
+
+    .download-btn:disabled { 
+
+      background-color: #ccc; 
+
+      cursor: not-allowed; 
+
+    } 
+
+    .message { 
+
+      margin-top: 15px; 
+
+      color: green; 
+
+      font-weight: bold; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+ 
+
+  <h1>Selecionar e Fazer Download de Arquivo Local</h1> 
+
+ 
+
+  <input type="file" id="fileInput"><br> 
+
+ 
+
+  <button class="download-btn" id="downloadBtn" disabled>Baixar Arquivo</button> 
+
+ 
+
+  <div class="message" id="message"></div> 
+
+ 
+
+  <script> 
+
+    const fileInput = document.getElementById('fileInput'); 
+
+    const downloadBtn = document.getElementById('downloadBtn'); 
+
+    const message = document.getElementById('message'); 
+
+ 
+
+    let selectedFile; 
+
+ 
+
+    fileInput.addEventListener('change', function() { 
+
+      selectedFile = this.files[0]; 
+
+      if (selectedFile) { 
+
+        downloadBtn.disabled = false; 
+
+        message.textContent = `Arquivo "${selectedFile.name}" selecionado.`; 
+
+      } 
+
+    }); 
+
+ 
+
+    downloadBtn.addEventListener('click', function() { 
+
+      if (!selectedFile) return; 
+
+ 
+
+      const url = URL.createObjectURL(selectedFile); 
+
+      const a = document.createElement('a'); 
+
+      a.href = url; 
+
+      a.download = selectedFile.name; 
+
+      a.click(); 
+
+ 
+
+      message.textContent = `✔️ Download de "${selectedFile.name}" concluído!`; 
+
+    }); 
+
+  </script> 
+
+ 
+
+</body> 
+
+</html> 
