@@ -1,0 +1,36 @@
+# 📁 Selecionar e Baixar Arquivo Local
+
+Este projeto é uma página HTML simples que permite ao usuário selecionar um arquivo local, visualizar seu nome e tamanho, e fazer o download diretamente pelo navegador.
+
+## 🚀 Funcionalidades
+
+- Seleção de arquivos locais via input `<input type="file">`
+- Exibição do nome e tamanho do arquivo (em KB ou MB)
+- Validação de tipo de arquivo permitido (`.png`, `.jpg`, `.jpeg`, `.pdf`)
+- Validação de tamanho máximo (5 MB)
+- Botão para download direto do arquivo selecionado
+- Mensagens informativas e de erro para o usuário
+
+## 🛠️ Como usar
+
+1. Abra o arquivo `index.html` em qualquer navegador moderno.
+2. Clique em "Selecionar Arquivo" e escolha um arquivo do seu dispositivo.
+3. Verifique se o tipo e tamanho são válidos.
+4. Clique em "Baixar Arquivo" para fazer o download.
+
+## 📦 Requisitos
+
+Nenhum backend é necessário. Tudo funciona apenas com HTML, CSS e JavaScript puro.
+
+## 🔒 Validações
+
+- **Tipos permitidos:** PNG, JPEG, PDF
+- **Tamanho máximo:** 5 MB
+
+## ✏️ Personalização
+
+Você pode alterar os tipos permitidos ou o tamanho máximo modificando estas variáveis no JavaScript:
+
+```javascript
+const maxSizeMB = 5;
+const allowedTypes = ['image/png', 'image/jpeg', 'application/pdf'];
